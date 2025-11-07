@@ -1,0 +1,114 @@
+/* src/App.css */
+:root {
+  --bg: #f4f6f8;
+  --card: #ffffff;
+  --text: #222;
+  --muted: #555;
+  --accent: #1976d2;
+  --danger: #ff5f5f;
+  --warning: #ffb74d;
+}
+
+[data-theme="dark"] {
+  --bg: #0f1720;
+  --card: #0b1220;
+  --text: #e6eef6;
+  --muted: #9aa7b2;
+  --accent: #4ea1ff;
+  --danger: #ff6b6b;
+  --warning: #ffb86b;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* header */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 24px;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 20px;
+}
+
+/* alerts */
+.alert {
+  margin: 12px 24px;
+  padding: 12px;
+  border-radius: 8px;
+  background: var(--warning);
+  color: #3b2b00;
+  font-weight: 600;
+}
+.alert.critical { background: var(--danger); color: white; }
+
+/* overview */
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 14px;
+  padding: 18px;
+}
+.card {
+  background: var(--card);
+  border-radius: 10px;
+  padding: 12px;
+  box-shadow: 0 2px 6px rgba(2,6,23,0.06);
+}
+
+/* gauge style */
+.gauge {
+  text-align: left;
+}
+.gauge h3 { margin: 0 0 8px 0; font-size: 14px; color: var(--muted); }
+.gauge .gauge-value { font-weight: 700; font-size: 28px; color: var(--accent); }
+
+/* charts grid */
+.charts-grid {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 16px;
+  padding: 18px;
+}
+
+/* right column cards stacked */
+.right-column { display: flex; flex-direction: column; gap: 12px; }
+
+/* processes table */
+.process-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.process-table th, .process-table td {
+  padding: 8px 10px;
+  text-align: left;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+.process-table th { background: transparent; color: var(--muted); }
+
+/* drive list */
+.drive-list { margin-top: 10px; font-size: 13px; color: var(--muted); }
+.drive-item { padding: 6px 0; }
+
+/* footer */
+.footer {
+  padding: 12px 18px;
+  margin-top: 18px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* responsive tweaks */
+@media (max-width: 900px) {
+  .charts-grid { grid-template-columns: 1fr; }
+}
