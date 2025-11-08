@@ -6,7 +6,7 @@ function Metrics() {
   useEffect(() => {
     const fetchMetrics = async () => {
       try {
-        const response = await fetch("http://127.0.0.1:5000/metrics");
+        const response = await fetch("https://cloud-native-monitoring-application-vw2s.onrender.com/metrics");
         const data = await response.json();
         setMetrics(data);
       } catch (err) {

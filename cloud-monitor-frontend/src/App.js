@@ -18,7 +18,7 @@ function App() {
 
   const fetchLatest = async () => {
     try {
-      const res = await fetch("/metrics");
+      const res = await fetch("https://cloud-native-monitoring-application-vw2s.onrender.com/metrics");
       const data = await res.json();
       setMetrics(data);
       setLoading(false);
@@ -29,7 +29,7 @@ function App() {
 
   const fetchHistory = async () => {
     try {
-      const res = await fetch("/metrics/history?points=60"); // last 60 points
+      const res = await fetch("https://cloud-native-monitoring-application-vw2s.onrender.com/metrics/history?points=60"); // last 60 points
       const data = await res.json();
       setHistory(data);
     } catch (err) {

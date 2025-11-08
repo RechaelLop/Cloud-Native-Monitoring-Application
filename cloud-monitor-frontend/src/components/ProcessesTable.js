@@ -7,7 +7,7 @@ export default function ProcessesTable() {
   const fetchProcs = async () => {
     try {
       // default top by CPU, 6 rows
-      const res = await fetch("/processes?n=6&sort=cpu");
+      const res = await fetch("https://cloud-native-monitoring-application-vw2s.onrender.com/processes?n=6&sort=cpu");
       const data = await res.json();
       setRows(data);
     } catch (err) {
